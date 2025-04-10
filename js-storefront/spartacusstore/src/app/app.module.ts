@@ -1,6 +1,7 @@
-import { provideHttpClient, withFetch, withInterceptorsFromDi } from "@angular/common/http";
 import { NgModule } from '@angular/core';
-import { BrowserModule,  } from '@angular/platform-browser';
+import { BrowserModule,   } from '@angular/platform-browser';
+
+import { provideHttpClient, withFetch, withInterceptorsFromDi } from "@angular/common/http";
 import { EffectsModule } from "@ngrx/effects";
 import { StoreModule } from "@ngrx/store";
 import { AppRoutingModule } from "@spartacus/storefront";
@@ -18,9 +19,7 @@ import { SpartacusModule } from './spartacus/spartacus.module';
     EffectsModule.forRoot([]),
     SpartacusModule
   ],
-  providers: [
-    provideHttpClient(withFetch(), withInterceptorsFromDi())
-  ],
+  providers: [provideHttpClient(withFetch(), withInterceptorsFromDi()),],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
