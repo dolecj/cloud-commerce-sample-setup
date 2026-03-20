@@ -1,5 +1,5 @@
 {
-    "commerceSuiteVersion": "2211",
+    "commerceSuiteVersion": "2211-jdk21.1",
     "enableImageProcessingService": true,
     "extensions": [
         "cloudmediaconversion",
@@ -186,8 +186,8 @@
                     "value": ""
                 },
                 {
-                    "key": "xss.filter.header.X-Frame-Options",
-                    "value": ""
+                    "key": "smarteditaddon.dynamicattribute.enabled",
+                    "value": "true"
                 },
                 {
                     "key": "smartedit.sso.enabled",
@@ -195,6 +195,10 @@
                 },
                 {
                     "key": "xyformsservices.webroot.override",
+                    "value": "false"
+                },
+                {
+                    "key": "cookies.SameSite.enabled",
                     "value": "false"
                 }
             ],
@@ -279,15 +283,11 @@
                     "contextPath": "/tomcatembeddedserver"
                 },
                 {
-                    "name": "yempty",
-                    "contextPath": "/yempty"
-                },
-                {
                     "name": "embeddedserver",
                     "contextPath": "/embeddedserver"
                 },
                 {
-                    "name": "oauth2",
+                    "name": "authorizationserver",
                     "contextPath": "/authorizationserver"
                 },
                 {
@@ -297,6 +297,14 @@
                 {
                     "name": "merchandisingcmswebservices",
                     "contextPath": "/merchandisingcmswebservices"
+                },
+                {
+                    "name": "resourceserver",
+                    "contextPath": "/resourceserver"
+                },
+                {
+                    "name": "datahubadapter",
+                    "contextPath": "/datahubadapter"
                 }
             ]
         },
@@ -371,10 +379,6 @@
                     "value": ""
                 },
                 {
-                    "key": "tomcat.maxthreads",
-                    "value": "1200"
-                },
-                {
                     "key": "sop.post.url",
                     "value": "${ccv2.services.api.url.0}/acceleratorservices/sop-mock/process"
                 },
@@ -440,7 +444,7 @@
                 },
                 {
                     "key": "corsfilter.commercewebservices.allowedHeaders",
-                    "value": "origin content-type accept authorization cache-control x-anonymous-consents x-profile-tag-debug x-consent-reference if-none-match occ-personalization-id occ-personalization-time"
+                    "value": "origin content-type accept authorization cache-control x-anonymous-consents x-profile-tag-debug x-consent-reference if-none-match occ-personalization-id occ-personalization-time sap-commerce-cloud-user-id sap-commerce-cloud-captcha-token"
                 },
                 {
                     "key": "corsfilter.commercewebservices.allowedMethods",
@@ -477,10 +481,6 @@
             ],
             "webapps": [
                 {
-                    "name": "hac",
-                    "contextPath": "/hac"
-                },
-                {
                     "name": "mediaweb",
                     "contextPath": "/medias"
                 },
@@ -493,24 +493,16 @@
                     "contextPath": "/acceleratorservices"
                 },
                 {
-                    "name": "b2bpunchout",
-                    "contextPath": "/b2bpunchout"
-                },
-                {
                     "name": "commercewebservices",
                     "contextPath": "/occ"
                 },
                 {
-                    "name": "oauth2",
+                    "name": "authorizationserver",
                     "contextPath": "/authorizationserver"
                 },
                 {
                     "name": "permissionswebservices",
                     "contextPath": "/permissionswebservices"
-                },
-                {
-                    "name": "ywebservices",
-                    "contextPath": "/ywebservices"
                 },
                 {
                     "name": "previewwebservices",
@@ -537,8 +529,8 @@
                     "contextPath": "/b2bordermanagementwebservices"
                 },
                 {
-                    "name": "datahubadapter",
-                    "contextPath": "/datahubadapter"
+                    "name": "resourceserver",
+                    "contextPath": "/resourceserver"
                 }
             ]
         },
@@ -561,18 +553,5 @@
                 }
             ]
         }
-    ],
-    "tests": {
-        "extensions": [
-            "kiwi",
-            "tiger"
-        ],
-        "annotations": [
-            "UnitTests",
-            "IntegrationTests"
-        ],
-        "packages": [
-            "com.acme.*"
-        ]
-    }
+    ]
 }
