@@ -10,10 +10,7 @@
       "csr": {
         "webroot": "dist/spartacusstore/browser/"
       },
-      "enabledRepositories": [
-        "spartacus-dev",
-        "https://npm.sap.com"
-      ]
+      "enabledRepositories": ["spartacus-6"]
     },
     {
       "name": "b2bspastore",
@@ -25,10 +22,7 @@
       "csr": {
         "webroot": "dist/b2bspastore/browser/"
       },
-      "enabledRepositories": [
-        "spartacus-dev",
-        "https://npm.sap.com"
-      ]
+      "enabledRepositories": ["spartacus-6"]
     }
   ],
   "nodeVersion": "22"
